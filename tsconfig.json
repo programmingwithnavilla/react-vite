@@ -1,7 +1,47 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    // Target modern JS
+    "target": "ESNext",
+
+    // Module system used by Vite (and modern bundlers)
+    "module": "ESNext",
+
+    // Needed for React JSX
+    "jsx": "react-jsx",
+
+    // Type checking
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+
+    // Module resolution
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+
+    // Prevent JS output (Vite handles bundling)
+    "noEmit": true,
+
+    // Base path and aliases
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@utils/*": ["src/utils/*"],
+      "@types/*": ["src/types/*"]
+    }
+  },
+
+  // Include your source directory
+  "include": ["src"],
+
+  // Optional: exclude unnecessary folders
+  "exclude": ["node_modules", "dist", "build"]
 }
